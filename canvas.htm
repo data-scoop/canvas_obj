@@ -1,0 +1,192 @@
+<html>
+<head>
+ <script type="text/javascript">
+
+  var msg = 'User agent insufficient for HTML5.Canvas object.';
+
+function ic(){
+       document.all.spx_range.value = document.all.spx.value;
+       document.all.spy_range.value = document.all.spy.value;
+       document.all.epx_range.value = document.all.epx.value;
+       document.all.epy_range.value = document.all.epy.value;
+       document.all.c1x_range.value = document.all.c1x.value;
+       document.all.c1y_range.value = document.all.c1y.value;
+       document.all.c2x_range.value = document.all.c2x.value;
+       document.all.c2y_range.value = document.all.c2y.value;
+}
+
+function rc(){
+       document.all.spx.value = document.all.spx_range.value;
+       document.all.spy.value = document.all.spy_range.value;
+       document.all.epx.value = document.all.epx_range.value;
+       document.all.epy.value = document.all.epy_range.value;
+       document.all.c1x.value = document.all.c1x_range.value;
+       document.all.c1y.value = document.all.c1y_range.value;
+       document.all.c2x.value = document.all.c2x_range.value;
+       document.all.c2y.value = document.all.c2y_range.value;
+}
+
+  function bezi(){
+
+    var sx = (document.all.spx.value);
+    var sy = (document.all.spy.value);
+
+    var ex = (document.all.epx.value);
+    var ey = (document.all.epy.value);
+    var cp1x = (document.all.c1x.value);
+    var cp1y = (document.all.c1y.value);
+
+    var cp2x = (document.all.c2x.value);
+    var cp2y = (document.all.c2y.value);
+
+    var canvas = document.getElementById('c1');
+
+    if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0,0,128,128);
+
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,ex,ey);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.arc(sx,sy,1,360,0,true);
+    ctx.strokeStyle = "#ff0000";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(ex,ey);
+    ctx.arc(ex,ey,1,360,0,true);
+    ctx.strokeStyle = "#00ff00";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cp1x,cp1y);
+    ctx.arc(cp1x,cp1y,1,360,0,true);
+    ctx.strokeStyle = "#ff8080";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cp2x,cp2y);
+    ctx.arc(cp2x,cp2y,1,360,0,true);
+    ctx.strokeStyle = "#80ff80";
+    ctx.stroke();
+
+   } else {
+     alert(msg);
+   }
+  }
+
+function xy(e){
+ document.all.i1.style.background="#ffffff";
+ mX = (e)?e.pageX:event.x;
+ mY = (e)?e.pageY:event.y;
+  canv1X = mX-34;
+  canv1Y = mY-35;
+  canv2X = mX-259;
+  canv2Y = mY-36;
+ document.all.i0.value = mX+", "+mY;
+  document.all.i1.value = canv1X+", "+canv1Y;
+  document.all.i2.value = canv2X+", "+canv2Y;
+ window.status = document.all.s1.innerText + document.all.i1.value;
+}
+
+function c1over(){document.all.c1.style.background="#ffffff";}
+function c1out(){document.all.c1.style.background="#cfcfcf";}
+
+function c2over(){document.all.c2.style.background="#ffffff";}
+function c2out(){document.all.c2.style.background="#cfcfcf";}
+
+window.document.onmousemove = function(e) {xy()};
+window.document.onmousedown = function(e) {xyfire()};
+
+
+
+ </script>
+
+
+ <style type="text/css">
+   #b1 {left: 32px; position: fixed; top: 8px;}
+   canvas { border: 2px dashed #000000; margin: 1px;}
+   #c1 {cursor: crosshair; left: 32px; position: fixed; top: 32px;}
+   #c2 {left: 256px; position: fixed; top: 32px;}
+
+   #i0 {left: 50%; position: fixed; top: 8px; font-size: 9pt;}
+   #i1 {left: 64px; position: fixed; top: 168px; font-size: 9pt;}
+   #i2 {left: 256px; position: fixed; top: 8px; font-size: 9pt;}
+    .green {background: #80ff80;}
+    .red {background: #ff8080;}
+
+   p {left: 8px; position: fixed; top: 196px; display-style: inline; width: 220px;}
+
+ </style>
+
+</head>
+
+
+
+<body onload="ic(); rc(); bezi();">
+
+<div id="div1">
+
+<b id="b1">bezierCurveTo()</b>
+
+<canvas height="128" id="c1" onmouseover="" onmouseout="" width="128"></canvas>
+<canvas height="512" id="c2" onmouseover="" onmouseout="" width="512"></canvas>
+
+<input disabled id="i0" size="4" type="text" />
+<input disabled id="i1" size="4" type="text" />
+<input disabled id="i2" size="4" type="text" />
+
+
+<p align="center">
+
+starting point
+<br />
+
+x <input class="red" id="spx" onchange="ic(); bezi();" size="3" type="text" /><input id="spx_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+<br />
+y <input class="red" id="spy" onchange="ic(); bezi();" size="3" type="text" /><input id="spy_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+
+<br />
+<br />
+control point 1
+<br />
+
+x <input class="red" id="c1x" onchange="ic(); bezi();" size="3" type="text" /><input id="c1x_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+<br />
+y <input class="red" id="c1y" onchange="ic(); bezi();" size="3" type="text" /><input id="c1y_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+
+<br />
+<br />
+ending point
+<br />
+
+x <input class="green" id="epx" onchange="ic(); bezi();" size="3" type="text" /><input id="epx_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+<br />
+y <input class="green" id="epy" onchange="ic(); bezi();" size="3" type="text" /><input id="epy_range" max="128" min="0" onchange="rc();  bezi();" step="1" type="range" />
+
+<br />
+<br />
+control point 2
+<br />
+
+x <input class="green" id="c2x" onchange="ic(); bezi();" size="3" type="text" /><input id="c2x_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+<br />
+y <input class="green" id="c2y" onchange="ic(); bezi();" size="3" type="text" /><input id="c2y_range" max="128" min="0" onchange="rc(); bezi();" step="1" type="range" />
+
+</p>
+</div>
+
+
+
+
+</body>
+
+
+
+</html>

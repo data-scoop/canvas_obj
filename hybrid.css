@@ -1,0 +1,145 @@
+
+
+canvas {
+	border: 1px solid #b4b4b4;
+	cursor:crosshair;}
+
+#hybrid_cnvs_0 {
+	left: 20px;
+	position: relative;
+	top: 20px;}
+
+#hybrid_cnvs_1 {
+	left: 20px;
+	position: relative;
+	top: 20px;}
+
+div{}
+
+.ask_img_file_off {
+	background: #ffffff;
+	left: 50px;
+	position: absolute;
+	top: 100px; 
+	visibility: hidden;}
+
+.ask_img_file_on {
+	background: #ffffff;
+	left: 50px;
+	position: absolute;
+	top: 100px;
+	visibility: visible;}
+
+.prpty_sht_off {
+	visibility: hidden;}
+
+.prpty_sht_on {
+	border: thin solid #b4b4b4;
+	font-family: trebuchet, verdana, arial;
+	font-size: 8pt;
+	left: 28px;
+	margin-bottom: 2px;
+	padding-left: 2px;
+	position: absolute;
+	top: 292px;
+	width: 254px;
+	visibility: visible;}
+
+
+img {}
+ #hybrid_img_new {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 6px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_export {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 6px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_0 {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 28px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_1 {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 50px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_2 {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 72px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_3 {
+	border: 1px solid #404040;
+	height: 16px;
+	left: 94px;
+	margin: 3px 0px 0px 0px;
+	position: fixed;
+	top: 2px;
+	width: 16px;}
+
+ #hybrid_img_new:hover, #hybrid_img_export:hover, #hybrid_img_0:hover, #hybrid_img_1:hover, #hybrid_img_2:hover, #hybrid_img_3:hover{
+	border: 1px solid #f04040;
+	height: 19px;
+	width: 19px;}
+
+
+input {
+	font-family: trebuchet, verdana, arial;
+	font-size: 8pt;
+	margin-left: 3px;}
+ 
+.type24 {
+	width: 24px;}
+
+.type48 {
+	width: 48px;}
+
+.type256 {
+	width: 256px;}
+
+
+li {
+	list-style-type: none;}
+
+
+select {
+	font-family: trebuchet, verdana, arial;
+	font-size: 8pt;
+	margin-left: 3px;}
+
+
+span.heading {
+	background: #cfcfcf;
+	display: block;
+	left: -2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	position: relative;
+	width: 253px;}
+
+
+

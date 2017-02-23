@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+div {border: thin solid #123480; font-family: trebuchet, verdana, arial; font-size: 8pt; margin-bottom: 2px; padding-left: 2px; width: 600px;}
+
+input {font-family: trebuchet, verdana, arial; font-size: 8pt; margin-left: 3px;}
+.type24 {width: 24px;}
+.type48 {width: 48px;}
+.type256 {width: 256px;}
+
+select {font-family: trebuchet, verdana, arial; font-size: 8pt; margin-left: 3px;}
+
+</style>
+</head>
+<body>
+
+<div id="ps_div_line">
+Color<input class="type48" id="ps_inp_color" type="text"/>
+
+Width<input class="type48" id="ps_inp_width" type="text"/>
+
+Cap<select id="ps_sel_cap">
+  <optgroup id="ps_optgroup_cap" label="Cap">
+   <option id="ps_opt_butt">Butt</option>
+   <option id="ps_opt_round">Round</option>
+   <option id="ps_opt_square">Square</option>
+  </optgroup>
+</select>
+
+Join<select id="ps_sel_join">
+  <optgroup id="ps_optgroup_join" label="Join">
+   <option id="ps_opt_miter">Miter</option>
+   <option id="ps_opt_bevel">Bevel</option>
+   <option id="ps_opt_round">Round</option>
+  </optgroup>
+</select>
+
+miterLimit<input class="type24" id="ps_inp_miterLimit" type="text"/>
+</div>
+
+<div id="ps_div_text">
+Font<input class="type48" id="ps_inp_font" type="text" />
+
+textAlign<select id="ps_sel_textAlign">
+  <optgroup id="ps_optgroup_textAlign" label="textAlign">
+   <option id="ps_opt_start">Start</option>
+   <option id="ps_opt_end">End</option>
+   <option id="ps_opt_left">Left</option>
+   <option id="ps_opt_right">Right</option>
+   <option id="ps_opt_center">Center</option>
+  </optgroup>
+</select>
+
+textBaseline<select id="ps_sel_textBaseline">
+  <optgroup id="ps_optgroup_textBaseline" label="textBaseline">
+   <option id="ps_opt_alphabetic">Alphabetic</option>
+   <option id="ps_opt_top">Top</option>
+   <option id="ps_opt_hanging">Hanging</option>
+   <option id="ps_opt_middle">Middle</option>
+   <option id="ps_opt_ideographic">Ideographic</option>
+   <option id="ps_opt_bottom">Bottom</option>
+  </optgroup>
+</select>
+<br />
+fillText<input class="type256" id="ps_inp_fillText" type="text" /> X <input class="type24" id="ps_inp_fillTextx" type="text" /> Y <input class="type24" id="ps_inp_fillTexty" type="text" /> maxWidth<input class="type24" id="ps_inp_fillTextmaxWidth" type="text" />
+<br />
+strokeText<input class="type256" id="ps_inp_strokeText" type="text" /> X<input class="type24" id="ps_inp_strokeTextx" type="text" /> Y<input class="type24" id="ps_inp_strokeTexty" type="text" /> maxWidth<input class="type24" id="ps_inp_strokeTextmaxWidth" type="text" />
+<br />
+textMetrics<input class="type256" id="ps_inp_textMetrics" type="text"/>
+</div>
+
+
+
+<div id="ps_div_transformations">
+Scale X<input class="type24" id="ps_inp_scalex" type="text"/> Y<input class="type24" id="ps_inp_scaley" type="text"/>
+ 
+Rotate<input class="type24" id="ps_inp_rotate" type="text"/>
+ 
+Translate X<input class="type24" id="ps_inp_translatex" type="text"/> Y<input class="type24" id="ps_inp_translatey" type="text"/>
+<br />
+Transform a<input class="type24" id="ps_inp_transforma" type="text" /> b<input class="type24" id="ps_inp_transformb" type="text" /> c<input class="type24" id="ps_inp_transformc" type="text" /> d<input class="type24" id="ps_inp_transformd" type="text" /> e<input class="type24" id="ps_inp_transforme" type="text" /> f<input class="type24" id="ps_inp_transformf" type="text" />
+<br />
+setTransform a<input class="type24" id="ps_inp_settransforma" type="text" /> b<input class="type24" id="ps_inp_settransformb" type="text" /> c<input class="type24" id="ps_inp_settransformc" type="text" /> d<input class="type24" id="ps_inp_settransformd" type="text" /> e<input class="type24" id="ps_inp_settransforme" type="text" /> f<input class="type24" id="ps_inp_settransformf" type="text" />
+</div>
+
+
+<div id="ps_div_shadows">
+shadowOffsetX<input class="type24" id="ps_inp_shadowOffsetX" type="text"/> shadowOffsetY<input class="type24" id="ps_inp_shadowOffsetY" type="text"/>
+shadowBlur<input class="type24" id="ps_inp_shadowBlur" type="text"/>
+shadowColor<input class="type48" id="ps_inp_shadowColor" type="text"/>
+</div>
+
+
+<div id="ps_div_movetto">
+moveTo 
+X<input class="type24" id="hybrid_inp_moveto_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_moveto_y" type="text" />
+</div>
+
+
+<div id="ps_div_lineto">
+lineTo 
+X<input class="type24" id="hybrid_inp_lineto_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_lineto_y" type="text" />
+</div>
+
+
+<div id="ps_div_arc">
+arc 
+X<input class="type24" id="hybrid_inp_arc_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_arc_y" type="text" /> 
+Radius<input class="type24" id="hybrid_inp_arc_radius" type="text" /> 
+Start Angle<input class="type24" id="hybrid_inp_arc_startangle" type="text" /> 
+End Angle<input class="type24" id="hybrid_inp_arc_endangle" type="text" /> 
+Anticlockwise<input class="typecb" id="hybrid_inp_arc_anticlockwise" type="checkbox" />
+</div>
+
+
+<div id="ps_div_arcto">
+arcTo 
+X1<input class="type24" id="hybrid_inp_arcto_x1" type="text" /> 
+Y1<input class="type24" id="hybrid_inp_arcto_y1" type="text" /> 
+X2<input class="type24" id="hybrid_inp_x2" type="text" /> 
+Y2<input class="type24" id="hybrid_inp_y2" type="text" /> 
+Radius<input class="type24" id="hybrid_inp_arcto_radius" type="text" />
+</div>
+
+
+<div id="ps_div_beziercurvetto">
+bezierCurveTo
+X<input class="type24" id="hybrid_inp_beziercurveto_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_beziercurveto_y" type="text" /> 
+CpX1<input class="type24" id="hybrid_inp_beziercurveto_cpx1" type="text" /> 
+CpY1<input class="type24" id="hybrid_inp_beziercurveto_cpy1" type="text" /> 
+CpX2<input class="type24" id="hybrid_inp_beziercurveto_cpx2" type="text" /> 
+CpY2<input class="type24" id="hybrid_inp_beziercurveto_cpy2" type="text" />
+</div>
+
+
+<div id="ps_div_quadraticcurveto">
+quadraticCurveTo
+X<input class="type24" id="hybrid_inp_quadraticcurveto_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_quadraticcurveto_y" type="text" /> 
+Cp1<input class="type24" id="hybrid_inp_quadraticcurveto_cpx" type="text" /> 
+Cp2<input class="type24" id="hybrid_inp_quadraticcurveto_cpy" type="text" />
+</div>
+
+
+<div id="ps_div_rect">
+rect
+X<input class="type24" id="hybrid_inp_rect_x" type="text" /> 
+Y<input class="type24" id="hybrid_inp_rect_y" type="text" /> 
+Width<input class="type24" id="hybrid_inp_rect_width" type="text" /> 
+Height<input class="type24" id="hybrid_inp_rect_height" type="text" /> 
+</div>
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,131 @@
+<! DOCTYPE html>
+
+<html>
+
+<head>
+   <meta name="author" content="" />
+   <meta name="description" content="" />
+   <meta name="keywords" content="" />
+   <link rel="stylesheet" href="hybrid.css" type="text/css" media="all" /> 
+   <script src="hybrid.js" type="text/javascript"></script>
+   <title>Hybrid HTML 5 &lt;canvas&gt;</title>
+</head>
+<body onload="">
+<div id="div_01">
+
+<img id="hybrid_img_new" onclick="new_cnvs();" src="img/new.png" title="new" />
+<img id="hybrid_img_0" onclick="m=-1;t=0; toggle_prpty_sht_on('hybrid_div_path'); " src="img/point.png" title="path" />
+<img id="hybrid_img_1" onclick="m=0;t=1; toggle_prpty_sht_on('hybrid_div_segment');" src="img/segment.png" title="segment" />
+<img id="hybrid_img_2" onclick="text_text(); m=0; t=2; toggle_prpty_sht_on('hybrid_div_text');" src="img/cursor_txt.png" title="text" />
+<img id="hybrid_img_3" onclick="askimgfile(); m=0; t=3; toggle_prpty_sht_on('hybrid_div_imgfile');" src="img/imgfile1.png" title="image" />
+
+<!--
+<img id="hybrid_img_n" onclick="m=0;t=n;" src="img/rectangle.png" title="rectangle" />
+<img id="hybrid_img_n" onclick="m=0;t=n;" src="img/ellipse.png" title="ellipse" />
+<img id="hybrid_img_export"  src="disc.png" title="export" />
+-->
+
+<canvas
+ height="256"
+ id="hybrid_cnvs_0"
+ onmousedown="event_manifold();"
+ onmousemove="dragger();"
+ onmouseup="tool_off();"
+ onselectstart="this.style.cursor='crosshair'; return false;"
+ width="256">
+</canvas>
+
+<br />
+<br />
+
+<div class="prpty_sht_off" id="hybrid_div_path">
+<span class="heading" id="hybrid_span_point">Point</span>
+Color<input class="type48" id="hybrid_inp_color_path" type="text" value="" />
+
+Diam<input class="type24" id="hybrid_inp_diameter" type="text" value="1" />
+Fill<input checked class="typecb" id="hybrid_inp_pointfilled" onchange="toggle();" type="checkbox" />
+
+Line<input class="type24" disabled id="hybrid_inp_width_path" type="text" value="1" />
+</div>
+
+
+<div class="prpty_sht_off" id="hybrid_div_segment">
+<span class="heading">Segment</span>
+Color<input class="type48" id="hybrid_inp_color_segment" type="text" value="" />
+Points 1<input checked class="typecb" id="hybrid_inp_point1" type="checkbox" /> 2<input checked class="typecb" id="hybrid_inp_point2" type="checkbox" />
+Width<input class="type24" id="hybrid_inp_width_segment" type="text" value="1" />
+</div>
+
+
+
+<div class="prpty_sht_off" id="hybrid_div_text">
+<span class="heading">Text</span>
+Text
+<input class="type128" id="hybrid_inp_text_text" type="text" value="" />
+
+<br />
+
+Size
+<input class="type24" id="hybrid_inp_text_size" type="text" value="18" />
+
+Font
+<input class="type64" id="hybrid_inp_text_font" type="text" value="verdana" />
+
+<br />
+
+Align
+<select class="attrb" id="hybrid_slct_text_textAlign">
+  <option>Start</option><option>Center</option>
+  <option>End</option><option>Right</option>
+</select>
+
+
+Baseline
+<select class="attrb" id="hybrid_slct_text_textBaseline">
+  <option>Alphabetic</option>
+  <option>Bottom</option>
+  <option>Hanging</option>
+  <option>Ideographic</option>
+  <option>Middle</option>
+  <option>Top</option>
+</select>
+
+<br />
+Fill
+<input class="typecb" id="hybrid_inp_text_fillText" type="checkbox" /> Color<input class="type48" id="hybrid_inp_text_fillText_color" type="text" value="" />
+
+<br />
+Stroke
+<input class="typecb" id="hybrid_inp_text_strokeText" type="checkbox" /> Color<input class="type48" id="hybrid_inp_text_strokeText_color" type="text" value="" />
+
+<br />
+measureText
+<input class="type128" id="hybrid_inp_text_measureText" type="text" value="" />
+
+</div>
+
+
+
+
+<div class="ask_img_file_off" id="hybrid_div_imgfile" onclick="this.className='ask_img_file_off';">Select an image file
+<br />
+<input id="hybrid_inp_imgfile" type="file" />
+<input class="img_file_off" id="hybrid_inp_imgfile_ok" type="button" value="OK" />
+</div>
+
+
+
+
+<!--
+<div class="hybrid1" id="hybrid_div_fill">
+<span class="heading">Fill</span>
+Color<input class="type48" id="hybrid_inp_color_fill" type="text" value="" />
+Gradient<input class="type48" id="hybrid_inp_gradient_fill" type="text"/>
+</div>
+-->
+
+
+
+</div>
+</body>
+</html>
